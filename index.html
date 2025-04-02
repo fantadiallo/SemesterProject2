@@ -3,13 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pet Adoption</title>
-    <script  defer type="module" src="/src/app.js"></script>
+    <title>Pet Adoption | Find Your New Best Friend</title>
+    <meta name="description" content="Browse available pets for adoption. Find dogs, cats, and more ready for a loving home." />
+    <script defer type="module" src="/src/app.js"></script>
   </head>
+  
   <body>
-    <main class="container my-5">
-      <h1 class="text-center">Welcome to the Pet Adoption App</h1>
+    <main class="home">
+      <h1 class="text-center">Adopt a new Family </h1>
+    
+      <form id="search-form" class="d-flex gap-2 mt-4">
+        <input type="text" class="form-control" id="search-input" placeholder="Search by name, breed, or species" />
+        <button class="btn btn-primary">Search</button>
+      </form>
+    
+      <div class="row g-4 mt-4" id="pet-list">
+     </div>
     </main>
-
+    
   </body>
 </html>

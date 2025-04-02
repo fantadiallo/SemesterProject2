@@ -1,0 +1,21 @@
+@import "bootstrap/scss/bootstrap";
+
+// 2. Global setup
+@import "./variables";
+@import "./base";
+@import "./layout";
+
+// 3. Components
+@import "./components/buttons";
+@import "./components/card";
+@import "./components/loader";
+
+// 4. Pages
+@import "./pages/home";
+@import "./pages/login";
+@import "./pages/register";
+@import "./pages/about";
+@import "./pages/profile";
+@import "./pages/createListing";
+@import "./pages/search";
+@import "./pages/notFound";
