@@ -2,6 +2,7 @@ import { API_BASE } from "../../utils/storage/Constans";
 import { headers } from "../../utils/storage/Headers";
 
 
+
 export default class PetsAPI {
   constructor(apiBase = API_BASE) {
     this.apiBase = apiBase;

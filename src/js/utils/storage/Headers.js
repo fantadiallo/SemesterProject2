@@ -1,5 +1,6 @@
-import { ACCESS_TOKEN_KEY, API_KEY } from './constants.js';
-import * as storage from './storage/localStorage.js';
+
+import { ACCESS_TOKEN_KEY, API_KEY } from './Constans.js';
+import * as storage from './localStorage.js';
 
 export function headers() {
   const headers = new Headers();

@@ -12,7 +12,7 @@ export function save(key, value) {
     }
   
   }
-  export function remove(key){
-    localStorage.removeItem(key)
-  }
+    export function remove(key){
+      localStorage.removeItem(key)
+    }
   

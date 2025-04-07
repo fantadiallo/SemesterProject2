@@ -6,5 +6,3 @@ export default async function renderHomePage() {
   petList.innerHTML = "";
   await onListings(petList);
 }
-
-const pets = await petsApi.getAllPets(); // ✅ no FormData needed

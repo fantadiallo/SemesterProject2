@@ -1,5 +1,5 @@
 import { API_BASE } from "../../utils/storage/Constans";
-import { load, save } from "../../utils/storage/localStorage";
+import *as storage from "../../utils/storage/localStorage";
 import { headers } from "../../utils/storage/Headers";
 
 export default class AuthAPI {
