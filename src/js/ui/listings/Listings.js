@@ -1,5 +1,5 @@
-import petsApi from
 
+crea
 const petsApi = new PetsAPI();
 
 export async function onListings(targetElement) {
