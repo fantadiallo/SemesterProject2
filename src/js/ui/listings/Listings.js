@@ -1,5 +1,6 @@
+import PetsAPI from "../../api/petsApi/petsApi";
+import { createPetCard } from "../components/createPetCards";
 
-crea
 const petsApi = new PetsAPI();
 
 export async function onListings(targetElement) {
@@ -12,7 +13,6 @@ export async function onListings(targetElement) {
       targetElement.innerHTML = "<p class='text-center'>No pets available.</p>";
       return;
     }
-
     pets.forEach(pet => {
       const card = createPetCard(pet);
       targetElement.appendChild(card);
