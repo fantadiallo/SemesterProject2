@@ -1,0 +1,54 @@
+@import "../variables";
+.pet-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+  
+    .card-img-top {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+  
+      @media (max-width: 768px) {
+        height: 160px;
+      }
+  
+      @media (max-width: 576px) {
+        height: 130px;
+      }
+    }
+  
+    .card-body {
+      flex-grow: 1;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+  
+      .card-title {
+        font-size: $font-size-section-title;
+        margin-bottom: 0.25rem;
+      }
+  
+      .card-text {
+        font-size: $font-size-caption;
+        color: $secondary;
+        opacity: 0.75;
+      }
+  
+      .btn {
+        font-size: $font-size-button;
+        margin-top: auto;
+      }
+    }
+  }
+  
+  

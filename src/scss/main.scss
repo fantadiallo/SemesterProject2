@@ -8,10 +8,13 @@
 @import "./base";
 @import "./layout";
 
+
 // Components
 @import "./components/button";
 @import "./components/card";
 @import "./components/loader";
+@import "./components/forms";
+@import "./components/typography";
 
 // Pages
 @import "./pages/home";

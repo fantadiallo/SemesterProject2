@@ -1,0 +1,9 @@
+#pet-list {
+    // Let Bootstrap handle layout
+    padding: 1rem;
+  
+    @media (max-width: 576px) {
+      padding-inline: 0.75rem;
+    }
+  }
+  
