@@ -1,3 +1,4 @@
+import { SearchFilter } from "../../ui/components/search";
 import { onListings } from "../../ui/listings/Listings";
 
 export default async function renderHomePage() {
@@ -12,6 +13,7 @@ export default async function renderHomePage() {
 
   try {
     await onListings(petList, 1); // Load the first page of pets
+    SearchFilter(onListings); 
   } catch (error) {
     console.error("Failed to load pets:", error);
     petList.innerHTML = "<p>Something went wrong while loading pets. Please try again later.</p>";

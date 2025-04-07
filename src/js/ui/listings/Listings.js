@@ -5,15 +5,16 @@ import { renderPagination } from "../components/renderPagination.js";
 const petsApi = new PetsAPI();
 const petsPerPage = 12;
 
-export async function onListings(targetElement, page = 1) {
+export async function onListings(targetElement, page = 1, searchQuery = '') {
   targetElement.innerHTML = "";
 
   try {
-    const allPets = await petsApi.getAllPets();
-    console.log("API Response:", allPets);
+    const allPets = searchQuery 
+      ? await petsApi.searchPets(searchQuery)  // If there is a search query, filter pets
+      : await petsApi.getAllPets();  // If no search query, fetch all pets
 
     if (!allPets || !allPets.length) {
-      targetElement.innerHTML = "<p class='text-center'>No pets available.</p>";
+      targetElement.innerHTML = "<p class='text-center'>No pets found.</p>";
       return;
     }
 
@@ -23,15 +24,11 @@ export async function onListings(targetElement, page = 1) {
 
     paginatedPets.forEach(pet => {
       const card = createPetCard(pet);
-      if (!card || !(card instanceof HTMLElement)) {
-        console.error("Invalid card element:", card);
-      }
       targetElement.appendChild(card);
     });
 
- if (document.getElementById("pagination")) {
-  renderPagination(allPets.length, page, petsPerPage);
-}} catch (error) {
+    renderPagination(allPets.length, page, petsPerPage, onListings);  // Pass `onListings` to handle pagination
+  } catch (error) {
     console.error("Error in onListings:", error);
     targetElement.innerHTML = `<p class="text-danger text-center">Something went wrong while loading pets.</p>`;
   }
