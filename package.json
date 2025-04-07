@@ -7,8 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-     "lint": "eslint ./src --ext .js"
-  },
+     "lint": "eslint ./src --ext .js",
+  "watch:sass": "sass --watch src/scss:public/css",
+  "format": "prettier --write ."
+    },
   "devDependencies": {
     "@eslint/js": "^9.23.0",
     "eslint": "^9.23.0",
