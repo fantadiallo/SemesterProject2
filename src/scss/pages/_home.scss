@@ -6,4 +6,28 @@
       padding-inline: 0.75rem;
     }
   }
+  #search-form {
+    max-width: 600px;
+    margin: 0 auto; /* ⬅️ Center it horizontally */
+    padding: 1rem;
+  
+    @media (max-width: 576px) {
+      padding-inline: 0.75rem;
+    }
+  }
+  main{
+    text-align: center
+  }
+  #search-input {
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #E2725B;
+  }
+  
+  
+  #search-input::placeholder {
+    color: #6c757d; /* Bootstrap's default placeholder gray */
+    opacity: 1;
+  }
+
   
