@@ -10,5 +10,9 @@ export function save(key, value) {
       console.error("Failed to load data from localStorage:", error);
       return null;
     }
+  
+  }
+  export function remove(key){
+    localStorage.removeItem(key)
   }
   
