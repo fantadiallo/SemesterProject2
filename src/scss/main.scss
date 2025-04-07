@@ -1,21 +1,23 @@
+// 1. Your custom variables must come before bootstrap
+@import "./variables";
+
+// 2. Then import Bootstrap (now it will use your overrides)
 @import "bootstrap/scss/bootstrap";
 
-// 2. Global setup
-@import "./variables";
+
 @import "./base";
 @import "./layout";
 
-// 3. Components
+// Components
 @import "./components/button";
 @import "./components/card";
 @import "./components/loader";
 
-// 4. Pages
+// Pages
 @import "./pages/home";
 @import "./pages/login";
 @import "./pages/register";
-@import "./pages/about";
 @import "./pages/profile";
-@import "./pages/createListing";
-@import "./pages/search";
-@import "./pages/notFound";
+@import "./pages/create";
+@import "./pages/edit";
+

@@ -8,7 +8,9 @@ export default defineConfig({
   },
   css: {
     preprocessorOptions: {
-      scss: {},
+      scss: {
+        includePaths: ['node_modules'],
+      },
     },
   },
 });
