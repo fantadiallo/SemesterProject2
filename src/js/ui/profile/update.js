@@ -1,7 +1,8 @@
+
 import profileApi from "../../api/profile/profile";
 import { load, save } from "../../utils/storage/localStorage";
 
-const api = new ProfileAPI();
+const api = new profileApi();
 const user = load("user");
 const username = user?.name || "defaultUsername"; 
 

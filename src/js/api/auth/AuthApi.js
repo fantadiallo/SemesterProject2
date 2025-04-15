@@ -16,14 +16,11 @@ constructor(apiBase = API_BASE) {
   }
 
   auth ={
-    register: async ({ name, email, password, bio, avatar}) => {
-        const body = JSON.stringify({
+    register: async ({ name, email, password}) => {
+      const body = JSON.stringify({
             name,
             email,
             password,
-            bio: bio || "", 
-            avatar: avatar || { url: "", alt: "" }, 
-            banner: banner || { url: "", alt: "" }, 
         });
         try {
             const response = await fetch(this.apiRegister, {

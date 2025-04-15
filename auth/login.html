@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="pet adoption, login, pets, adopt a pet, cat adoption, dog adoption, animal shelter">
+    <meta name="author" content="Tukolor Pet Adoption">
+    <script defer type="module" src="/src/app.js"></script>
+    <title>Login | Pet Adoption</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!-- Top Navigation (Tablet & Desktop) -->
+        <nav id="top-nav" class="d-none d-md-flex justify-content-center gap-4 py-3 border-bottom" aria-label="Top navigation">
+          <a href="/index.html" class="nav-link">Home</a>
+          <a href="/profile.html" class="nav-link">Profile</a>
+          <a href="/login/" class="nav-link">Links</a>
+        </nav>
+      
+        <!-- Bottom Navigation (Mobile only) -->
+        <nav id="bottom-nav" class="d-flex d-md-none justify-content-around py-2 border-top fixed-bottom" aria-label="Bottom mobile navigation">
+          <a href="/index.html" class="nav-link text-center">
+            🏠<br /><small>Home</small>
+          </a>
+          <a href="/contact/" class="nav-link text-center">
+            👤<br /><small>Contact</small>
+          </a>
+        </nav>
+      </header>
+
+    <main class="login py-5">
+        <div class="container">
+            <section class="login-container">
+                <h1 class="text-center mb-4">Login to your account</h1>
+
+                <form name="login" id="login-form" aria-labelledby="loginForm" class="needs-validation" novalidate>
+        
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Noroff Email</label>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            class="form-control form-control-lg"
+                            placeholder="Noroff@noroff.stud.no"
+                            required
+                            aria-required="true"
+                            pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                            title="Please enter a valid Noroff email address"
+                        />
+                        <div class="invalid-feedback">Please enter a valid Noroff email address.</div>
+                    </div>
+
+           
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input
+                            name="password"
+                            type="password"
+                            id="password"
+                            class="form-control form-control-lg"
+                            placeholder="Enter your password"
+                            required
+                            aria-required="true"
+                            minlength="8"
+                            title="Password must be at least 8 characters long"
+                        />
+                        <div class="invalid-feedback">Password must be at least 8 characters long.</div>
+                    </div>
+
+                
+                    <div id="loadingSpinner" style="display:none;">
+                        <div class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary btn-lg w-100 mt-3">Login</button>
+
+                    <!-- Footer with Register Link -->
+                    <div class="login-footer text-center mt-3">
+                        <p>Don't have an account? <a href="/auth/register/index.html" class="text-decoration-none">Register here</a></p>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer class="text-center py-3 mt-5" id="main-footer">
+        <small>&copy; 2025 Pet Adoption. All rights reserved.</small>
+      </footer>
+
+</body>
+
+</html>

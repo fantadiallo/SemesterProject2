@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer type="module" src="/src/app.js"></script>
+    <title>Register</title>
+</head>
+
+<body>
+    <header>
+        <!-- Top Navigation (Tablet & Desktop) -->
+        <nav id="top-nav" class="d-none d-md-flex justify-content-center gap-4 py-3 border-bottom" aria-label="Top navigation">
+          <a href="/index.html" class="nav-link">Home</a>
+          <a href="/profile.html" class="nav-link">Profile</a>
+          <a href="/login/" class="nav-link">Links</a>
+        </nav>
+      
+        <!-- Bottom Navigation (Mobile only) -->
+        <nav id="bottom-nav" class="d-flex d-md-none justify-content-around py-2 border-top fixed-bottom" aria-label="Bottom mobile navigation">
+            <a href="/index.html" class="nav-link text-center">
+              🏠<br /><small>Home</small>
+            </a>
+            <a href="/contact/" class="nav-link text-center">
+              👤<br /><small>Contact</small>
+            </a>
+    
+          </nav>
+      </header>
+
+    <main class="register py-5">
+        <div class="container">
+            <h1 class="text-center mb-4">Create an Account</h1>
+            <form name="register" id="registerForm" method="post" action="/api/auth/index" class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <label for="name" class="form-label fw-semibold">Name</label>
+                        <input
+                            class="form-control form-control-lg"
+                            id="name"
+                            type="text"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                            maxlength="20"
+                            pattern="^[\w]+$"
+                            title="Please enter a username using only letters and numbers"
+                            autocomplete="name"
+                        />
+                        <div class="invalid-feedback">Please enter a valid username.</div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="email" class="form-label fw-semibold">Noroff Email</label>
+                        <input
+                            class="form-control form-control-lg"
+                            id="email"
+                            type="email"
+                            name="email"
+                            placeholder="Noroff@noroff.stud.no"
+                            required
+                            pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                            title="Please enter a valid noroff.no or stud.noroff.no address"
+                            autocomplete="email"
+                        />
+                        <div class="invalid-feedback">Please enter a valid Noroff email address.</div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="password" class="form-label fw-semibold">Password</label>
+                        <input
+                            class="form-control form-control-lg"
+                            id="password"
+                            type="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                            minlength="8"
+                            title="Password must be at least 8 characters long"
+                            autocomplete="new-password"
+                        />
+                        <div class="invalid-feedback">Password must be at least 8 characters long.</div>
+                    </div>
+                </div>
+
+                <div class="text-muted mb-4 text-center">
+                    Already have an account? <a href="/auth/login/index.html" class="text-decoration-none fw-bold">Login</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold">Create Account</button>
+            </form>
+        </div>
+    </main>
+    <footer class="text-center py-3 mt-5" id="main-footer">
+      <small>&copy; 2025 Pet Adoption. All rights reserved.</small>
+    </footer>
+</body>
+
+</html>

@@ -1,6 +1,5 @@
 import { API_BASE } from "../../utils/storage/Constans";
-import { headers } from "../../utils/storage/Headers";
-
+import headers from "../../utils/storage/Headers"; 
 
 export default class profileApi {
     apiBase = "";

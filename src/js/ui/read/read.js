@@ -5,7 +5,7 @@ import *as storage from "../../utils/storage/localStorage";
 
 
 profileApi
-const api = new ProfileAPI();
+const api = new profileApi();
 const user = storage.load("user");
 
 
