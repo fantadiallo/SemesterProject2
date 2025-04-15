@@ -1,22 +1,9 @@
-import { populateUpdateForm } from "../../ui/components/populate";
-import { createProfileCard } from "../../ui/components/updateProfileCard";
-import { onUpdateProfile } from "../../ui/profile/update";
-import { readProfile } from "../../ui/read/read";
-import { authGuard } from "../../utils/authGuard";
 
+import { displayUsername } from "../../ui/components/display.js";
+import { authGuard } from "../../utils/authGuard.js";
 
+console.log("✅ profileView.js loaded");
+console.log("🔥 profileView.js loaded");
 
-
-const form = document.forms.updateProfile; // Target the form by name
-if (form) {
-  form.addEventListener("submit", onUpdateProfile);
-}
-
-
-
-
-createProfileCard()
-authGuard()
-readProfile();
-onUpdateProfile()
-populateUpdateForm()
+authGuard();
+displayUsername(); // This will render the username

@@ -1,35 +1,28 @@
 import profileApi from "../../api/profile/profile";
 import { userId } from "../../utils/storage/Constans";
-import *as storage from "../../utils/storage/localStorage";
+import * as storage from "../../utils/storage/localStorage";
+import { createProfileCard } from "../components/updateProfileCard";
 
-
-
-profileApi
 const api = new profileApi();
 const user = storage.load("user");
-
-
 const username = location.pathname === "/profile/" && user ? user.name : userId;
 
-// Log for debugging
-console.log("Loaded user:", user);
-console.log("Dynamic Username:", username);
+console.log("📦 readProfile loaded");
 
 export async function readProfile() {
+  console.log("📥 reading profile...");
   try {
-    // Use the dynamically determined username
     const response = await api.profile.read(username);
+    console.log("✅ Response from API:", response);
 
     if (response?.data) {
       const profile = response.data;
-      createProfileCard(profile); // Create the profile card
+      console.log("👤 Loaded profile:", profile);
+      createProfileCard(profile);
     } else {
-      console.error("Profile data is missing:", response);
-      document.getElementById("profile-container").textContent = "Failed to load profile.";
+      console.error("⚠️ Profile data missing", response);
     }
   } catch (error) {
-    console.error("Error fetching profile:", error);
-    document.getElementById("profile-container").textContent =
-      "An error occurred while loading the profile. Please try again later.";
+    console.error("❌ Error in readProfile:", error);
   }
 }

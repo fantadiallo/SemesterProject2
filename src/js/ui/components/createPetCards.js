@@ -15,6 +15,7 @@ export function createPetCard(pet) {
     <div class="mb-3">
       <h5 class="card-title">${pet.name}</h5>
       <p class="card-text text-muted small">
+       ${pet.location} 
         ${pet.breed} • ${pet.species} • ${pet.age} years
       </p>
     </div>

@@ -2,7 +2,7 @@
 import PetsAPI from "../../api/petsApi/petsApi";
 const petsApi = new PetsAPI();
 
-export function deletePet(petId) {
+export function ondeletePet(petId) {
   if (confirm("Are you sure you want to delete this pet?")) {
     petsApi.deletePet(petId)
       .then(() => {
