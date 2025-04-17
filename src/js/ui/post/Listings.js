@@ -1,5 +1,5 @@
-import PetsAPI from "../../api/petsApi/petsApi";
-import { createPetCard } from "../components/createPetCards";
+import PetsAPI from "../../api/petsApi/petsApi.js";
+import { createPetCard } from "../components/createPetCards.js";
 import { renderPagination } from "../components/renderPagination.js";
 
 const petsApi = new PetsAPI();

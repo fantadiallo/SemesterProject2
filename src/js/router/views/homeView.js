@@ -1,5 +1,5 @@
 import { SearchFilter } from "../../ui/components/search";
-import { onListings } from "../../ui/listings/Listings";
+import { onListings } from "../../ui/post/Listings";
 
 export default async function renderHomePage() {
   const petList = document.getElementById("pet-list");

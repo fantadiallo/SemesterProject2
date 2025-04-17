@@ -7,9 +7,9 @@ export function renderPagination(totalItems, currentPage, petsPerPage, onListing
   }
 
   const totalPages = Math.ceil(totalItems / petsPerPage);
-  paginationEl.innerHTML = "";  // Clear the existing pagination buttons
+  paginationEl.innerHTML = ""; 
 
-  // Create "Previous" button
+
   if (currentPage > 1) {
     const prevBtn = document.createElement("button");
     prevBtn.className = "btn btn-outline-secondary me-2";
@@ -19,7 +19,7 @@ export function renderPagination(totalItems, currentPage, petsPerPage, onListing
     paginationEl.appendChild(prevBtn);
   }
 
-  // Create "Next" button
+
   if (currentPage < totalPages) {
     const nextBtn = document.createElement("button");
     nextBtn.className = "btn btn-outline-primary";

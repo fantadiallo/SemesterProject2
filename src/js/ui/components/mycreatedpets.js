@@ -1,5 +1,6 @@
+import { ondeletePet } from "../post/delete.js";
 
-export function createPetCard(pet) {
+export function mycreatePetCard(pet) {
   const card = document.createElement("div");
   card.className = "col-12 col-sm-6 col-md-4 col-lg-3";
 
@@ -19,12 +20,23 @@ export function createPetCard(pet) {
         <p class="card-text small mb-2">${pet.description}</p>
         <p class="badge bg-info text-dark">${pet.adoptionStatus}</p>
 
-        <p class="text-muted small mt-auto">Location: ${pet.location}</p>
+        <p class="text-muted small mt-2">Location: ${pet.location}</p>
 
         <a href="/pet/index.html?id=${pet.id}" class="btn btn-outline-primary mt-3 w-100">View Details</a>
+
+        <div class="mt-2 d-flex gap-2">
+          <a href="/pet/edit/index.html?id=${pet.id}" class="btn btn-warning w-50">Edit</a>
+          <button class="btn btn-danger w-50" data-delete-id="${pet.id}">Delete</button>
+        </div>
       </div>
     </div>
   `;
 
+  const deleteButton = card.querySelector(`[data-delete-id="${pet.id}"]`);
+  deleteButton?.addEventListener("click", () => {
+    ondeletePet(pet.id);
+  });
+
   return card;
 }
+

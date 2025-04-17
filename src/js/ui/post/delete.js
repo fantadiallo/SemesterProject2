@@ -1,4 +1,4 @@
-// In profile-view.js or similar
+
 import PetsAPI from "../../api/petsApi/petsApi";
 const petsApi = new PetsAPI();
 
