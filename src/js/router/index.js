@@ -33,12 +33,12 @@ export default async function router(pathname = window.location.pathname) {
             await import("./views/editPetView.js");
             break;
 
-        case "/profile":
+        case "/profile/":
         case "/profile/index.html":
             await import("./views/profileView.js");
             break;
 
-        case "/NotFound":
+        case "/NotFound/":
         case "/NotFound/index.html":
             await import("./views/NotFoundView.js");
             break;
