@@ -1,4 +1,7 @@
-my
+import PetsAPI from "../../api/petsApi/petsApi.js";
+import { load } from "../../utils/storage/localStorage.js";
+import { mycreatePetCard } from "../components/mycreatedpets.js";
+
 const petsApi = new PetsAPI();
 
 export async function loadUserPets() {

@@ -30,6 +30,7 @@ export async function onCreatePet(event) {
     const createdPet = await petsApi.createPet(petData);
     alert("Pet added successfully!");
     form.reset();
+    window.location.href = "/profile/";
   } catch (error) {
     console.error("Error adding pet:", error);
     alert("Failed to add pet. Please try again.");
