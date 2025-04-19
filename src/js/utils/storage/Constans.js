@@ -30,7 +30,7 @@ export const ROUTES = {
   LOGIN: '/auth/login.html',
   REGISTER: '/auth/register.html',
   HOME: '/',
-  PET_DETAILS: '/pet/index.html',
+  PET_DETAILS: '/details/index.html',
   PET_CREATE: '/pet/create.html',
   PET_EDIT: '/pet/edit.html',
   NOT_FOUND: '/NotFound/index.html',
