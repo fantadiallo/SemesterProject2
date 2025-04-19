@@ -1,15 +1,13 @@
-v
-  export function hideLoader() {
-    const loader = document.getElementById("loader");
-    if (loader) {
-      loader.style.display = "none";  
-    }
+export function showLoader() {
+  const overlay = document.getElementById("loader-overlay");
+  if (overlay) {
+    overlay.classList.add("active");
   }
-  export function hideLoader() {
-    const loader = document.getElementById("loader");
-    if (loader) {
-      loader.style.display = "none";  // Hide the loader
-    }
+}
+
+export function hideLoader() {
+  const overlay = document.getElementById("loader-overlay");
+  if (overlay) {
+    overlay.classList.remove("active");
   }
-  
-  
+}

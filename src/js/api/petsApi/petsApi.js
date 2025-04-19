@@ -1,4 +1,3 @@
-import { hideLoader, showLoader } from "../../ui/components/loader";
 import { API_BASE } from "../../utils/storage/Constans";
 import { headers } from "../../utils/storage/Headers";
 
@@ -22,7 +21,6 @@ export default class PetsAPI {
    * @throws {Error} - If the request fails.
    */
   async fetchData(endpoint, method = "GET", body = null) {
-    showLoader();
     try {
       const response = await fetch(endpoint, {
         method,
@@ -38,8 +36,6 @@ export default class PetsAPI {
     } catch (error) {
       console.error("Pets API error:", error);
       throw error;
-    } finally {
-      hideLoader();
     }
   }
 

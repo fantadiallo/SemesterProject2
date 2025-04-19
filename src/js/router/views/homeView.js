@@ -1,3 +1,4 @@
+import { hideLoader, showLoader } from "../../ui/components/loader";
 import { SearchFilter } from "../../ui/components/search";
 import { onListings } from "../../ui/post/Listings";
 
@@ -8,14 +9,17 @@ export default async function renderHomePage() {
     console.error("Element with id 'pet-list' not found in the DOM.");
     return;
   }
-
-  petList.innerHTML = "<p>Loading pets...</p>"; // Show a loading message
+  showLoader();
 
   try {
-    await onListings(petList, 1); // Load the first page of pets
-    SearchFilter(onListings); 
+ 
+    await onListings(petList, 1);
+    SearchFilter(onListings);
   } catch (error) {
     console.error("Failed to load pets:", error);
     petList.innerHTML = "<p>Something went wrong while loading pets. Please try again later.</p>";
+  } finally {
+    hideLoader();
   }
+  
 }
