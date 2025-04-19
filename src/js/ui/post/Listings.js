@@ -14,39 +14,36 @@ const petsPerPage = 12;
  * @returns {Promise<void>} - Resolves when the pets are rendered.
  */
 export async function onListings(targetElement, page = 1, searchQuery = '') {
-  showLoader();
+  showLoader();  // Show loader when fetching data
   targetElement.innerHTML = "";
 
   try {
-    // Fetch pets based on search query or get all pets
     const allPets = searchQuery 
-      ? await petsApi.searchPets(searchQuery)  
-      : await petsApi.getAllPets();  
+      ? await petsApi.searchPets(searchQuery)  // Fetch pets based on search query
+      : await petsApi.getAllPets();  // Fetch all pets if no search query
 
-    // Handle case where no pets are found
     if (!allPets || !allPets.length) {
-      targetElement.innerHTML = "<p class='text-center'>No pets found.</p>";
+      targetElement.innerHTML = "<p class='text-center'>No pets found.</p>";  // Show no pets found message
       return;
     }
 
-    // Paginate the pets
     const start = (page - 1) * petsPerPage;
     const end = start + petsPerPage;
     const paginatedPets = allPets.slice(start, end);
 
-    // Render each pet card
     paginatedPets.forEach(pet => {
       const card = createPetCard(pet);
-      targetElement.appendChild(card);
+      targetElement.appendChild(card);  // Render pet cards
     });
 
-    // Render pagination controls
-    renderPagination(allPets.length, page, petsPerPage, onListings);  
+    renderPagination(allPets.length, page, petsPerPage, onListings);  // Render pagination controls
 
   } catch (error) {
     console.error("Error in onListings:", error);
-    targetElement.innerHTML = `<p class="text-danger text-center">Something went wrong while loading pets.</p>`;
+    targetElement.innerHTML = `<p class="text-danger text-center">Something went wrong while loading pets.</p>`;  // Error message
   } finally {
-    hideLoader();
+    hideLoader();  // Hide loader once the data is processed
   }
 }
+
+
