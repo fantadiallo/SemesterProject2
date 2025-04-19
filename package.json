@@ -7,18 +7,20 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-     "lint": "eslint ./src --ext .js",
-  "watch:sass": "sass --watch src/scss:public/css",
-  "format": "prettier --write ."
-    },
+    "lint": "eslint ./src --ext .js",
+    "watch:sass": "sass --watch src/scss:public/css",
+    "format": "prettier --write ."
+  },
   "devDependencies": {
     "@eslint/js": "^9.23.0",
-    "eslint": "^9.23.0",
+    "eslint": "^9.25.0",
     "globals": "^16.0.0",
+    "prettier": "^3.5.3",
     "vite": "^6.2.0"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "font-awesome": "^4.7.0",
     "sass": "^1.86.0"
   }
 }

@@ -1,21 +1,19 @@
-import { remove } from "../../utils/storage/localStorage";
+import { remove } from "../../utils/storage/localStorage.js";
 
-remove
 export function onLogout() {
-    const confirmed = confirm("are you sure you want to sign out?")
-      if(confirmed){
-   
-      try {
-        localStorage.removeItem("token"); 
-       localStorage.removeItem("user");
-       
-       alert("you have logged out!")
-       window.location.href = "/auth/login";
-   } catch (error){
-      console.error("logout failed", error);
-      alert("could not sign out, please try again.");
-     }
-   } else {
-     alert("sign out canceled")
-   }
-   }
+  const confirmed = confirm("Are you sure you want to sign out?");
+  if (!confirmed) {
+    alert("Sign out canceled");
+    return;
+  }
+
+  try {
+    remove("token");
+    remove("user");
+    alert("You have logged out!");
+    window.location.href = "/auth/login.html"; // ✅ make sure path is correct
+  } catch (error) {
+    console.error("Logout failed:", error);
+    alert("Could not sign out. Please try again.");
+  }
+}

@@ -1,3 +1,6 @@
+import { ACCESS_TOKEN_KEY } from "./Constans";
+
+
 /**
  * Retrieves the logged-in user's data from local storage.
  * @returns {Object} - The user object containing user info and access token.
@@ -29,4 +32,13 @@ export function getUserData() {
   /**
    * Default user name or fallback.
    */
-  export const USER_NAME = getUserData().user.name || "defaultName";
+  export function getUserName() {
+    return getUserData().user.name || "defaultName";
+  }
+
+  
+  
+  export function isLoggedIn() {
+    return !!localStorage.getItem(ACCESS_TOKEN_KEY);
+  }
+  
