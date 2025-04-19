@@ -1,0 +1,28 @@
+// Color Palette (used project-wide)
+$primary: #F8F5F2;       // Ivory - base background
+$secondary: #333333;     // Charcoal - text/nav
+$accent: #E2725B;        // Terracotta/Orange - CTAs
+
+$sage: #AABBA2;
+$light-gray: #E5E5E5;
+
+//  Bootstrap override variables
+$body-bg: $primary;
+$body-color: $secondary;
+$btn-primary-bg: $accent;
+$btn-primary-color: #fff;
+
+$font-stack: 'Manrope', sans-serif;
+$max-width: 1200px; // max-width for container
+
+// 📏 Custom Font Sizes by Usage
+$font-size-main-title: 32px;
+$font-size-section-title: 24px;
+$font-size-button: 18px;
+$font-size-body: 16px;
+$font-size-caption: 14px;
+
+// Bootstrap Typography Overrides (optional)
+$font-size-base: 1rem; // ✅ instead of 16px
+$h1-font-size: $font-size-main-title;
+$h2-font-size: $font-size-section-title;

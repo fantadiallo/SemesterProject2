@@ -1,0 +1,57 @@
+@import "variables";
+
+// 🔁 Box-sizing reset
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+// 🔁 Prevent unwanted scrollbars from overflow
+html, body {
+  overflow-x: hidden;
+}
+
+// 🔠 Root styling
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+// 🧱 Global body styles
+body {
+  font-family: $font-stack;
+  font-size: $font-size-body;
+  background-color: $body-bg;
+  color: $body-color;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// 🔗 Global link style
+a {
+  color: $accent;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// 🖼 Image scaling
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// 🔘 Button reset (optional)
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
