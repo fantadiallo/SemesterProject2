@@ -1,9 +1,14 @@
-
 import PetsAPI from "../../api/petsApi/petsApi.js";
 import { hideLoader, showLoader } from "../../ui/components/loader.js";
 
 const api = new PetsAPI();
 
+/**
+ * Fetches and renders the details of a pet based on the ID in the URL.
+ * Displays the pet's image, attributes, and description in a styled card.
+ *
+ * @returns {Promise<void>}
+ */
 export async function renderPetDetails() {
   const petDetailsContainer = document.getElementById("petDetails");
   const params = new URLSearchParams(window.location.search);
@@ -30,12 +35,13 @@ export async function renderPetDetails() {
       <div class="card shadow-lg border-0">
         <div class="row g-0">
           <div class="col-md-6">
-        <img
-  src="${imageUrl}"
-  alt="${imageAlt}"
-  onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found';"
-  class="img-fluid rounded-start w-100 h-100 object-fit-cover"
-/>          </div>
+            <img
+              src="${imageUrl}"
+              alt="${imageAlt}"
+              onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found';"
+              class="img-fluid rounded-start w-100 h-100 object-fit-cover"
+            />
+          </div>
           <div class="col-md-6">
             <div class="card-body">
               <h2 class="card-title fw-bold">${pet.name || "Unnamed Pet"}</h2>
@@ -58,8 +64,7 @@ export async function renderPetDetails() {
         </div>
       </div>
     `;
-  } catch (error) {
-    console.error("Failed to fetch pet details:", error);
+  } catch {
     petDetailsContainer.innerHTML = `<p class="text-danger">Something went wrong. Please try again later.</p>`;
   } finally {
     hideLoader();

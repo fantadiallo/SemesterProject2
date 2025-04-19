@@ -1,7 +1,12 @@
-
 import { ACCESS_TOKEN_KEY, API_KEY } from './Constans.js';
 import * as storage from './localStorage.js';
 
+/**
+ * Constructs the headers for authenticated API requests.
+ * Includes `Content-Type`, `X-Noroff-API-Key`, and optionally the `Authorization` header.
+ *
+ * @returns {Headers} A Headers object containing necessary request headers.
+ */
 export function headers() {
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');

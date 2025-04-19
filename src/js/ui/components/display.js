@@ -1,16 +1,15 @@
 import { load } from "../../utils/storage/localStorage";
 
+/**
+ * Displays the current user's username inside a given container element.
+ *
+ * @param {string} [containerId="profile-Container"] - The ID of the container to render the username into.
+ */
 export function displayUsername(containerId = "profile-Container") {
-  console.log("📦 Loading user for display...");
-
   const user = load("user");
-  console.log("👤 User from storage:", user);
-
   const container = document.getElementById(containerId);
-  if (!container) {
-    console.error("❌ Container not found:", containerId);
-    return;
-  }
+
+  if (!container) return;
 
   if (user?.name) {
     container.innerHTML = `<h2 class="fw-bold">@${user.name}</h2>`;

@@ -7,22 +7,19 @@ const api = new profileApi();
 const user = storage.load("user");
 const username = location.pathname === "/profile/" && user ? user.name : userId;
 
-console.log("📦 readProfile loaded");
-
+/**
+ * Fetches and renders the user's profile using the API and creates the profile card.
+ * 
+ * @returns {Promise<void>}
+ */
 export async function readProfile() {
-  console.log("📥 reading profile...");
   try {
     const response = await api.profile.read(username);
-    console.log("✅ Response from API:", response);
 
     if (response?.data) {
-      const profile = response.data;
-      console.log("👤 Loaded profile:", profile);
-      createProfileCard(profile);
-    } else {
-      console.error("⚠️ Profile data missing", response);
+      createProfileCard(response.data);
     }
   } catch (error) {
-    console.error("❌ Error in readProfile:", error);
+    console.error("Error loading profile:", error);
   }
 }

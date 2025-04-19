@@ -4,6 +4,14 @@ import { load } from "../../utils/storage/localStorage.js";
 const petsApi = new PetsAPI();
 const user = load("user");
 
+/**
+ * Handles the submission of the pet creation form.
+ * Gathers form data, constructs a pet object, sends it to the API,
+ * and redirects the user upon success.
+ *
+ * @param {Event} event - The form submission event.
+ * @returns {Promise<void>}
+ */
 export async function onCreatePet(event) {
   event.preventDefault();
   const form = event.target;
@@ -36,4 +44,5 @@ export async function onCreatePet(event) {
     alert("Failed to add pet. Please try again.");
   }
 }
+
 

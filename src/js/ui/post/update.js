@@ -1,6 +1,13 @@
 import PetsAPI from "../../api/petsApi/petsApi.js";
 const petsApi = new PetsAPI();
 
+/**
+ * Handles the form submission to update an existing pet listing.
+ *
+ * @param {Event} event - The form submission event.
+ * @param {string} petId - The unique identifier of the pet to update.
+ * @returns {Promise<void>}
+ */
 export async function OnUpdatePet(event, petId) {
   event.preventDefault();
 
@@ -29,10 +36,9 @@ export async function OnUpdatePet(event, petId) {
     const messageBox = document.getElementById("successMessage");
     messageBox.classList.remove("d-none");
 
-    // Wait 3 seconds, then hide the message and redirect
     setTimeout(() => {
       messageBox.classList.add("d-none");
-      window.location.href = "/profile/index.html"; // or wherever you want
+      window.location.href = "/profile/index.html";
     }, 3000);
 
   } catch (error) {
@@ -40,4 +46,3 @@ export async function OnUpdatePet(event, petId) {
     alert("Failed to update pet.");
   }
 }
-

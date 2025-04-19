@@ -5,69 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Profile</title>
   <script defer type="module" src="/src/app.js"></script>
- <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
+  <!-- ✅ Navigation -->
   <header>
-    <!-- Top Navigation (Tablet & Desktop) -->
-    <nav id="top-nav" class="d-none d-md-flex justify-content-center gap-4 py-3 border-bottom" aria-label="Top navigation">
+    <nav id="top-nav" class="d-none d-md-flex justify-content-center gap-4 py-3 border-bottom">
       <a href="/index.html" class="nav-link">Home</a>
       <a href="/profile/index.html" class="nav-link">Profile</a>
-      <a href="/login/" class="nav-link">login</a>
+      <a href="/login/" class="nav-link">Login</a>
     </nav>
-  
-    <!-- Bottom Navigation (Mobile only) -->
-    <nav id="bottom-nav" class="d-flex d-md-none justify-content-around py-2 border-top fixed-bottom" aria-label="Bottom mobile navigation">
+
+    <nav id="bottom-nav" class="d-flex d-md-none justify-content-around py-2 border-top fixed-bottom bg-white">
       <a href="/index.html" class="nav-link text-center">
-          <i class="fas fa-home"></i><br /><small>Home</small>
+        <i class="fas fa-home"></i><br /><small>Home</small>
       </a>
       <a href="/profile/" class="nav-link text-center">
-          <i class="fas fa-user"></i><br /><small>Profile</small>
+        <i class="fas fa-user"></i><br /><small>Profile</small>
       </a>
       <a href="/pet/create.html" class="nav-link text-center">
-          <i class="fas fa-plus"></i><br /><small>Create</small>
+        <i class="fas fa-plus"></i><br /><small>Create</small>
       </a>
       <a href="#" id="logoutLink" class="nav-link text-center">
         <i class="fas fa-sign-out-alt"></i><br /><small>Logout</small>
-      </a>      
-  </nav>
+      </a>
+    </nav>
+  </header>
 
-  <main class="container mt-4">
 
-    <h1>myProfile</h1>
-    <div class="container mt-5">
-      <div class="row gy-4">
-        <div class="col-lg-4">
-          <div class="bg-white p-4 rounded shadow-sm">
-          
-            <div id="profile-Container"></div>
+  <main class="container my-5">
 
-            </div>
-            <div id="profileLoader" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-light d-flex justify-content-center align-items-center" style="z-index: 1050;">
-              <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </div>
-          </div>
-     
-          
+    <h1 class="text-center mb-4">My Profile</h1>
+
+    <div class="row gy-4">
+      <!-- Profile Info -->
+      <div class="col-lg-4">
+        <div class="card shadow-sm p-4">
+          <h5 class="mb-3">Your Info</h5>
+          <div id="profile-Container"></div>
         </div>
+      </div>
+
+      <!-- My Pets -->
+      <div class="col-lg-8">
+        <h5 class="mb-3">My Pets</h5>
+        <div id="myPets" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4"></div>
       </div>
     </div>
 
- 
-  
-  
-    <div class="MyPetsListings"></div>
-  
-    </section>
+    <!-- Loader -->
+    <div id="profileLoader" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-white bg-opacity-75 d-flex justify-content-center align-items-center" style="z-index: 1050;">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
 
   </main>
-  <footer class="text-center py-3 mt-5 Myfooter" id="main-footer">
+
+  <!-- ✅ Footer -->
+  <footer class="text-center py-3 mt-5 border-top">
     <small>&copy; 2025 Pet Adoption. All rights reserved.</small>
   </footer>
 
 </body>
-
 </html>

@@ -5,13 +5,22 @@ import { renderPagination } from "../components/renderPagination.js";
 const petsApi = new PetsAPI();
 const petsPerPage = 12;
 
+/**
+ * Renders a paginated list of pet cards to the target element.
+ * Supports optional search filtering.
+ *
+ * @param {HTMLElement} targetElement - The DOM element to render the pet cards into.
+ * @param {number} [page=1] - The current page number for pagination.
+ * @param {string} [searchQuery=''] - Optional search query to filter pets by name or other criteria.
+ * @returns {Promise<void>}
+ */
 export async function onListings(targetElement, page = 1, searchQuery = '') {
   targetElement.innerHTML = "";
 
   try {
     const allPets = searchQuery 
-      ? await petsApi.searchPets(searchQuery)  // If there is a search query, filter pets
-      : await petsApi.getAllPets();  // If no search query, fetch all pets
+      ? await petsApi.searchPets(searchQuery)
+      : await petsApi.getAllPets();
 
     if (!allPets || !allPets.length) {
       targetElement.innerHTML = "<p class='text-center'>No pets found.</p>";
@@ -27,7 +36,7 @@ export async function onListings(targetElement, page = 1, searchQuery = '') {
       targetElement.appendChild(card);
     });
 
-    renderPagination(allPets.length, page, petsPerPage, onListings);  // Pass `onListings` to handle pagination
+    renderPagination(allPets.length, page, petsPerPage, onListings);
   } catch (error) {
     console.error("Error in onListings:", error);
     targetElement.innerHTML = `<p class="text-danger text-center">Something went wrong while loading pets.</p>`;
