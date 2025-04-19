@@ -23,19 +23,19 @@ export async function renderPetDetails() {
       return;
     }
 
-    const imageUrl = pet.media?.url || "https://via.placeholder.com/600x400?text=No+Image";
-    const imageAlt = pet.media?.alt || pet.name || "Pet Image";
+    const imageUrl = pet.image?.url?.trim() || "https://placehold.co/600x400?text=No+Image";
+    const imageAlt = pet.image?.alt?.trim() || pet.name || "Pet image";
 
     petDetailsContainer.innerHTML = `
       <div class="card shadow-lg border-0">
         <div class="row g-0">
           <div class="col-md-6">
-            <img
-              src="${imageUrl}"
-              alt="${imageAlt}"
-              class="img-fluid rounded-start w-100 h-100 object-fit-cover"
-            />
-          </div>
+        <img
+  src="${imageUrl}"
+  alt="${imageAlt}"
+  onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found';"
+  class="img-fluid rounded-start w-100 h-100 object-fit-cover"
+/>          </div>
           <div class="col-md-6">
             <div class="card-body">
               <h2 class="card-title fw-bold">${pet.name || "Unnamed Pet"}</h2>

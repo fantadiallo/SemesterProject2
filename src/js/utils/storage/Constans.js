@@ -22,8 +22,6 @@ export const API_PROFILES = `${API_BASE}/profiles`;
 
 // URL params (used in views like pet detail or edit)
 export const params = new URLSearchParams(window.location.search);
-export const petId = params.get("id") || null;
-export const userId = params.get("id") || null;
 
 // Route paths
 export const ROUTES = {

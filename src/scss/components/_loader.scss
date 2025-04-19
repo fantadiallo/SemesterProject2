@@ -1,12 +1,13 @@
 @import "./../variables";
+
 #loader-overlay {
   position: fixed;
-  inset: 0;
-  background-color: $accent; 
+  inset: 0; // top: 0; right: 0; bottom: 0; left: 0;
   z-index: 9999;
   display: none;
   justify-content: center;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.8); // optional overlay
 }
 
 #loader-overlay.active {
@@ -17,4 +18,5 @@
   width: 3rem;
   height: 3rem;
   border-width: 0.3rem;
+  color: $accent;
 }

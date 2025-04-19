@@ -9,7 +9,29 @@
 </head>
 <body>
 
-  <header></header>
+  <header>
+    <!-- Top Navigation (Tablet & Desktop) -->
+    <nav id="top-nav" class="d-none d-md-flex justify-content-center gap-4 py-3 border-bottom" aria-label="Top navigation">
+      <a href="/index.html" class="nav-link">Home</a>
+      <a href="/profile/index.html" class="nav-link">Profile</a>
+      <a href="/login/" class="nav-link">login</a>
+    </nav>
+  
+    <!-- Bottom Navigation (Mobile only) -->
+    <nav id="bottom-nav" class="d-flex d-md-none justify-content-around py-2 border-top fixed-bottom" aria-label="Bottom mobile navigation">
+      <a href="/index.html" class="nav-link text-center">
+          <i class="fas fa-home"></i><br /><small>Home</small>
+      </a>
+      <a href="/profile/" class="nav-link text-center">
+          <i class="fas fa-user"></i><br /><small>Profile</small>
+      </a>
+      <a href="/pet/create.html" class="nav-link text-center">
+          <i class="fas fa-plus"></i><br /><small>Create</small>
+      </a>
+      <a href="/login/" class="nav-link text-center">
+          <i class="fas fa-sign-in-alt"></i><br /><small>Login/Logout</small>
+      </a>
+  </nav>
 
   <main class="container mt-4">
 

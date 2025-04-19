@@ -25,10 +25,19 @@ export async function OnUpdatePet(event, petId) {
 
   try {
     await petsApi.updatePet(petId, listingsData);
-    alert("Pet updated successfully!");
-    window.location.reload();
+
+    const messageBox = document.getElementById("successMessage");
+    messageBox.classList.remove("d-none");
+
+    // Wait 3 seconds, then hide the message and redirect
+    setTimeout(() => {
+      messageBox.classList.add("d-none");
+      window.location.href = "/profile/index.html"; // or wherever you want
+    }, 3000);
+
   } catch (error) {
     console.error("Could not update pet:", error);
     alert("Failed to update pet.");
   }
 }
+
