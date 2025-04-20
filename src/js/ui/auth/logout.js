@@ -1,4 +1,4 @@
-import { remove } from "../../utils/storage/localstorage.js"; 
+import { remove } from "../../utils/storage/mystor";
 
 export function onLogout() {
   const confirmed = confirm("Are you sure you want to sign out?");

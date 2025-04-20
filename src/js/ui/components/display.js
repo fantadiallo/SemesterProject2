@@ -1,4 +1,4 @@
-import { load } from "../../utils/storage/localstorage";
+import { load } from "../../utils/storage/mystor";
 
 /**
  * Displays the current user's username inside a given container element.

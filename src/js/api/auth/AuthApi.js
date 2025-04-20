@@ -1,6 +1,6 @@
 import { API_BASE } from "../../utils/storage/Constans";
 import { headers } from "../../utils/storage/Headers";
-import { load, save } from "../../utils/storage/localstorage";
+import { load, save } from "../../utils/storage/mystor";
 
 /**
  * AuthAPI handles user authentication with login and registration.

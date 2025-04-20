@@ -1,6 +1,6 @@
 
 import PetsAPI from "../../api/petsApi/petsApi.js";
-import { load } from "../../utils/storage/localstorage.js";
+import { load } from "../../utils/storage/mystor.js";
 import { mycreatePetCard } from "../components/mycreatedpets.js";
 
 const petsApi = new PetsAPI();
