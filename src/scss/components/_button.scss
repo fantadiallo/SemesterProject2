@@ -47,4 +47,54 @@
       box-shadow: none;
     }
   }
+  @import "../variables";
+
+.btn {
+    font-family: $font-stack;
+    font-size: $font-size-button;
+    border-radius: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  // Solid (primary) button
+  .btn-primary {
+    background-color: $btn-primary-bg;
+    color: $btn-primary-color;
+    border: none;
+  
+    &:hover {
+      background-color: darken($btn-primary-bg, 5%);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+  
+    &:active {
+      transform: scale(0.98);
+      box-shadow: none;
+    }
+  }
+  
+  // Outline button
+  .btn-outline-primary {
+    background-color: transparent;
+    color: $btn-primary-bg;
+    border: 2px solid $btn-primary-bg;
+  
+    &:hover {
+      background-color: $btn-primary-bg;
+      color: $btn-primary-color;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+  
+    &:active {
+      transform: scale(0.98);
+      box-shadow: none;
+    }
+  }
+  
   

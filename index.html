@@ -12,34 +12,46 @@
   </head>
 
   <body>
-    <header>
-      <!-- Top Navigation (Tablet & Desktop) -->
-      <nav id="top-nav" class="d-none d-md-flex justify-content-center gap-4 py-3 border-bottom" aria-label="Top navigation">
+<header>
+  <nav id="top-nav" class="d-none d-md-flex justify-content-between align-items-center py-3 border-bottom w-100">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex gap-3">
         <a href="/index.html" class="nav-link">Home</a>
         <a href="/profile/index.html" class="nav-link">Profile</a>
-        <a href="/login/" class="nav-link">login</a>
-      </nav>
-    
-      <!-- Bottom Navigation (Mobile only) -->
-      <nav id="bottom-nav" class="d-flex d-md-none justify-content-around py-2 border-top fixed-bottom" aria-label="Bottom mobile navigation">
-        <a href="/index.html" class="nav-link text-center">
-            <i class="fas fa-home"></i><br /><small>Home</small>
-        </a>
-        <a href="/profile/" class="nav-link text-center">
-            <i class="fas fa-user"></i><br /><small>Profile</small>
-        </a>
-        <a href="/pet/create.html" class="nav-link text-center">
-            <i class="fas fa-plus"></i><br /><small>Create</small>
-        </a>
-        <a href="/auth/login.html" class="nav-link text-center">
-            <i class="fas fa-sign-in-alt"></i><br /><small>Login/Logout</small>
-        </a>
-        <a href="#" id="logoutLink" class="nav-link text-center">
-          <i class="fas fa-sign-out-alt"></i><br /><small>Logout</small>
-        </a>  
-    </nav>
-    
-    </header>
+      </div>
+  
+      <a href="/index.html" class="logo d-flex align-items-center gap-1 text-decoration-none">
+        <span class="fw-bold fs-4 text-primary">MY</span>
+        <i class="fa-solid fa-paw text-primary fs-5"></i>
+        <span class="fw-bold fs-4 text-primary">PET</span>
+      </a>
+  
+      <div class="d-flex gap-3">
+        <a href="/pet/create.html" class="nav-link">Create</a>
+        <a href="/auth/login.html" class="nav-link">Login</a>
+        <a href="#" id="logoutLink" class="nav-link text-danger" style="display: none;">Logout</a>
+      </div>
+    </div>
+  </nav>
+  <nav id="bottom-nav" class="d-flex d-md-none justify-content-around py-2 border-top fixed-bottom">
+    <a href="/index.html" class="nav-link text-center">
+      <i class="fas fa-home"></i><br /><small>Home</small>
+    </a>
+    <a href="/profile/" class="nav-link text-center">
+      <i class="fas fa-user"></i><br /><small>Profile</small>
+    </a>
+    <a href="/pet/create.html" class="nav-link text-center">
+      <i class="fas fa-plus"></i><br /><small>Create</small>
+    </a>
+    <a href="#" id="logoutLink" class="nav-link text-center text-danger" style="display: none;">
+      <i class="fas fa-sign-out-alt"></i><br /><small>Logout</small>
+    </a>
+  </nav>
+  
+  
+</header>
+   
+   
     <main class="home" id="main-content">
       <div class="container">
         <h1 class="text-center mt-4">Adopt a New Family Member</h1>

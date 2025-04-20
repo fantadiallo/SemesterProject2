@@ -37,9 +37,12 @@ export function createPetCard(pet) {
         <a href="${detailLink}" class="btn btn-outline-primary mt-3 w-100">View Details</a>
 
         ${isOwner ? `
-          <button class="btn btn-warning mt-2 w-100 edit-pet-btn" data-id="${pet.id}">Edit</button>
-          <button class="btn btn-danger mt-2 w-100 delete-pet-btn" data-id="${pet.id}">Delete</button>
-        ` : ""}
+        <button class="btn btn-primary mt-2 w-100 edit-pet-btn" data-id="${pet.id}">
+          <i class="fas fa-pen"></i> Edit
+        </button>
+        <button class="btn btn-danger mt-2 w-100 delete-pet-btn" data-id="${pet.id}">
+          <i class="fas fa-trash"></i> Delete
+        </button>` : ""}
       </div>
     </div>
   `;

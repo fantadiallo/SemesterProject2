@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,67 +20,84 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-
-  <!-- ✅ Navigation -->
   <header>
-    <nav id="top-nav" class="d-none d-md-flex justify-content-center gap-4 py-3 border-bottom" aria-label="Top navigation">
-      <a href="/index.html" class="nav-link" aria-label="Go to Home Page">Home</a>
-      <a href="/profile/index.html" class="nav-link" aria-label="Go to Profile Page">Profile</a>
-      <a href="/login/" class="nav-link" aria-label="Go to Login Page">Login</a>
+  
+    <nav id="top-nav" class="d-none d-md-flex justify-content-between align-items-center py-3 border-bottom w-100" aria-label="Top navigation">
+      <div class="container d-flex justify-content-between align-items-center px-4">
+        
+       
+        <div class="d-flex gap-3">
+          <a href="/index.html" class="nav-link">Home</a>
+          <a href="/profile/index.html" class="nav-link">Profile</a>
+        </div>
+  
+   
+        <a href="/index.html" class="logo d-flex align-items-center gap-1 text-decoration-none" aria-label="Home">
+          <span class="fw-bold fs-4 text-primary">MY</span>
+          <i class="fa-solid fa-paw text-primary fs-5"></i>
+          <span class="fw-bold fs-4 text-primary">PET</span>
+        </a>
+  
+        <div class="d-flex gap-3">
+          <a href="/pet/create.html" class="nav-link">Create</a>
+z
+          <a href="/login/" class="nav-link text-center" aria-label="Login/Logout">
+            <i class="fas fa-sign-in-alt"></i>Login
+          </a>
+        </div>
+  
+      </div>
     </nav>
-
-    <nav id="bottom-nav" class="d-flex d-md-none justify-content-around py-2 border-top fixed-bottom bg-white" aria-label="Bottom mobile navigation">
-      <a href="/index.html" class="nav-link text-center" aria-label="Go to Home Page">
-        <i class="fas fa-home"></i><br /><small>Home</small>
+    <nav id="bottom-nav" class="d-flex d-md-none justify-content-around py-2 border-top fixed-bottom" aria-label="Bottom mobile navigation">
+      <a href="/index.html" class="nav-link text-center" aria-label="Home">
+        <i class="fas fa-paw"></i><br /><small>MYPET</small>
       </a>
-      <a href="/profile/" class="nav-link text-center" aria-label="Go to Profile Page">
+      <a href="/profile/" class="nav-link text-center" aria-label="Profile">
         <i class="fas fa-user"></i><br /><small>Profile</small>
       </a>
-      <a href="/pet/create.html" class="nav-link text-center" aria-label="Go to Create Page">
+      <a href="/pet/create.html" class="nav-link text-center" aria-label="Create">
         <i class="fas fa-plus"></i><br /><small>Create</small>
       </a>
-      <a href="#" id="logoutLink" class="nav-link text-center" aria-label="Logout">
-        <i class="fas fa-sign-out-alt"></i><br /><small>Logout</small>
+      <a href="/login/" class="nav-link text-center" aria-label="Login/Logout">
+        <i class="fas fa-sign-in-alt"></i><br /><small>Login</small>
       </a>
     </nav>
   </header>
-
-  <!-- ✅ Main Content -->
-  <main class="container my-5">
+  
+  <main class="container my-5 profile-page">
     <h1 class="text-center mb-4">My Profile</h1>
-
-    <div class="row gy-4">
-      <!-- Profile Info -->
-      <div class="col-lg-4">
-        <div class="card shadow-sm p-4">
-          <h5 class="mb-3">Your Info</h5>
+  
+    <div class="row flex-column gy-4">
+    
+      <div class="col-12 col-lg-6 mx-auto">
+        <div class="myprofiledisplay card shadow-sm p-4">
+          <h5 class="mb-3">User</h5>
           <div id="profile-Container" aria-live="polite"></div>
         </div>
       </div>
-
-      <!-- My Pets -->
-      <div class="col-lg-8">
-        <h5 class="mb-3">My Pets</h5>
-        <div id="myPets" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4" aria-live="polite"></div>
+      
+  
+   
+      <div class="col-12 col-lg-10 mx-auto">
+        <div id="myPets" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 justify-content-center"></div>
       </div>
-    </div>
+      
+  
 
-    <!-- Loader -->
-    <div id="profileLoader" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-white bg-opacity-75 d-flex justify-content-center align-items-center" style="z-index: 1050;">
+    <div id="Loader" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-white bg-opacity-75 d-flex justify-content-center align-items-center" style="z-index: 1050;">
       <div class="spinner-border text-primary" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
-
-    <!-- Edit Pet Modal -->
+  
+   
     <div class="modal fade" id="editPetModal" tabindex="-1" aria-hidden="true" aria-labelledby="editPetModalLabel">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
           <form id="editPetForm" class="p-3 needs-validation" novalidate>
             <h5 id="editPetModalLabel" class="modal-title mb-3">Edit Pet</h5>
-
+  
             <input type="hidden" id="pet-id" />
-
             <input id="pet-name" name="name" class="form-control mb-2" placeholder="Name" required />
             <input id="pet-species" name="species" class="form-control mb-2" placeholder="Species" required />
             <input id="pet-breed" name="breed" class="form-control mb-2" placeholder="Breed" required />
@@ -97,22 +113,17 @@
               <option value="Available">Available</option>
               <option value="Adopted">Adopted</option>
             </select>
-
+  
             <div class="d-flex justify-content-between mt-3">
-              <button type="button" class="btn btn-secondary w-50 me-2" data-bs-dismiss="modal">
-                Cancel
-              </button>
-              <button type="submit" class="btn btn-primary w-50">
-                Save Changes
-              </button>
+              <button type="button" class="btn btn-secondary w-50 me-2" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-primary w-50">Save Changes</button>
             </div>
           </form>
         </div>
       </div>
     </div>
   </main>
-
-  <!-- ✅ Footer -->
+  
   <footer class="text-center py-3 mt-5 border-top">
     <small>&copy; 2025 Pet Adoption. All rights reserved.</small>
   </footer>

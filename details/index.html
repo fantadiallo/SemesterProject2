@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,29 +21,36 @@
 
 <body>
   <header>
-    <!-- Top Navigation (Tablet & Desktop) -->
-    <nav id="top-nav" class="d-none d-md-flex justify-content-center gap-4 py-3 border-bottom" aria-label="Top navigation">
-      <a href="/index.html" class="nav-link" aria-label="Go to Home Page">Home</a>
-      <a href="/profile/index.html" class="nav-link" aria-label="Go to Profile Page">Profile</a>
-      <a href="/login/" class="nav-link" aria-label="Go to Login Page">Login</a>
-    </nav>
-
-    <!-- Bottom Navigation (Mobile only) -->
-    <nav id="bottom-nav" class="d-flex d-md-none justify-content-around py-2 border-top fixed-bottom" aria-label="Bottom mobile navigation">
-      <a href="/index.html" class="nav-link text-center" aria-label="Go to Home Page">
-        <i class="fas fa-home"></i><br /><small>Home</small>
+    <!-- Top Navigation (Desktop & Tablet) -->
+    <nav id="top-nav" class="d-none d-md-flex justify-content-between align-items-center px-4 py-3 border-bottom" aria-label="Top navigation">
+      <a href="/index.html" class="logo text-decoration-none d-flex align-items-center gap-2" aria-label="Home">
+        <span class="fw-bold fs-4 text-dark">MY</span>
+        <i class="fas fa-paw text-accent fs-4"></i> <!-- You can replace this with an image if you prefer -->
+        <span class="fw-bold fs-4 text-dark">PET</span>
       </a>
-      <a href="/profile/" class="nav-link text-center" aria-label="Go to Profile Page">
+      <div class="d-flex gap-4">
+        <a href="/profile/index.html" class="nav-link" aria-label="Profile">Profile</a>
+        <a href="/login/" class="nav-link" aria-label="Login">Login</a>
+      </div>
+    </nav>
+  
+    <!-- Bottom Navigation (Mobile only) -->
+    <nav id="bottom-nav" class="d-flex d-md-none justify-content-around py-2 border-top fixed-bottom bg-white" aria-label="Bottom mobile navigation">
+      <a href="/index.html" class="nav-link text-center" aria-label="Home">
+        <i class="fas fa-paw"></i><br /><small>MYPET</small>
+      </a>
+      <a href="/profile/" class="nav-link text-center" aria-label="Profile">
         <i class="fas fa-user"></i><br /><small>Profile</small>
       </a>
-      <a href="/pet/create.html" class="nav-link text-center" aria-label="Go to Create Page">
+      <a href="/pet/create.html" class="nav-link text-center" aria-label="Create">
         <i class="fas fa-plus"></i><br /><small>Create</small>
       </a>
-      <a href="/login/" class="nav-link text-center" aria-label="Go to Login or Logout Page">
-        <i class="fas fa-sign-in-alt"></i><br /><small>Login/Logout</small>
+      <a href="/login/" class="nav-link text-center" aria-label="Login/Logout">
+        <i class="fas fa-sign-in-alt"></i><br /><small>Login</small>
       </a>
     </nav>
   </header>
+  
 
   <main class="container my-5" id="main-content">
     <div class="row justify-content-center">
