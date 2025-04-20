@@ -95,6 +95,10 @@ export default class AuthAPI {
         save("accessToken", userInfo.accessToken);
         save("user", userInfo);
 
+        const sessionDuration = 1000 * 60 * 60 * 2; // 2 hours
+        const expiresAt = Date.now() + sessionDuration;
+        save("sessionExpiresAt", expiresAt);
+
         return userInfo;
       } catch (error) {
         console.error("Login failed: ", error);

@@ -7,21 +7,6 @@ import { ondeletePet } from "../post/delete";
  * Includes Edit and Delete buttons if the current user is the owner.
  *
  * @param {Object} pet - The pet data object.
- * @param {string} pet.id - Unique identifier for the pet.
- * @param {string} pet.name - Name of the pet.
- * @param {string} pet.species - Species of the pet.
- * @param {string} pet.breed - Breed of the pet.
- * @param {number} pet.age - Age of the pet in years.
- * @param {string} pet.gender - Gender of the pet.
- * @param {string} pet.size - Size category of the pet.
- * @param {string} pet.color - Color of the pet.
- * @param {string} pet.location - Location of the pet.
- * @param {string} pet.description - Description of the pet.
- * @param {string} pet.adoptionStatus - Adoption status (e.g., "Available", "Adopted").
- * @param {Object} [pet.image] - Optional image data.
- * @param {string} [pet.image.url] - URL of the pet's image.
- * @param {string} [pet.image.alt] - Alt text for the image.
- * @param {string} pet.owner - ID of the pet owner (used to check edit/delete permission).
  * @returns {HTMLElement} The constructed pet card element.
  */
 export function createPetCard(pet) {
@@ -31,10 +16,9 @@ export function createPetCard(pet) {
   const imageUrl = pet.image?.url || "https://placehold.co/400x300";
   const imageAlt = pet.image?.alt || pet.name;
   const detailLink = `${ROUTES.PET_DETAILS}?id=${pet.id}`;
-  const editLink = `${ROUTES.PET_EDIT}?id=${pet.id}`;
 
   const user = currentUser();
-  const isOwner = user?.sub === pet.owner;
+  const isOwner = user?.name === pet.owner?.name; // ✅ Fixed comparison
 
   card.innerHTML = `
     <div class="card h-100 shadow-sm pet-card d-flex flex-column">
@@ -53,20 +37,42 @@ export function createPetCard(pet) {
         <a href="${detailLink}" class="btn btn-outline-primary mt-3 w-100">View Details</a>
 
         ${isOwner ? `
-          <a href="${editLink}" class="btn btn-warning mt-2 w-100">Edit</a>
-          <button class="btn btn-danger mt-2 w-100" data-id="${pet.id}">Delete</button>
+          <button class="btn btn-warning mt-2 w-100 edit-pet-btn" data-id="${pet.id}">Edit</button>
+          <button class="btn btn-danger mt-2 w-100 delete-pet-btn" data-id="${pet.id}">Delete</button>
         ` : ""}
       </div>
     </div>
   `;
 
   if (isOwner) {
-    const deleteBtn = card.querySelector("[data-id]");
+    // DELETE
+    const deleteBtn = card.querySelector(".delete-pet-btn");
     deleteBtn.addEventListener("click", () => {
       const confirmDelete = confirm(`Are you sure you want to delete "${pet.name}"?`);
       if (confirmDelete) {
         ondeletePet(pet.id, card);
       }
+    });
+
+    // EDIT
+    const editBtn = card.querySelector(".edit-pet-btn");
+    editBtn.addEventListener("click", () => {
+      document.getElementById("pet-id").value = pet.id;
+      document.getElementById("pet-name").value = pet.name || "";
+      document.getElementById("pet-species").value = pet.species || "";
+      document.getElementById("pet-breed").value = pet.breed || "";
+      document.getElementById("pet-age").value = pet.age || "";
+      document.getElementById("pet-gender").value = pet.gender || "";
+      document.getElementById("pet-size").value = pet.size || "";
+      document.getElementById("pet-color").value = pet.color || "";
+      document.getElementById("pet-location").value = pet.location || "";
+      document.getElementById("pet-description").value = pet.description || "";
+      document.getElementById("adoptionStatus").value = pet.adoptionStatus || "Available";
+      document.getElementById("image-url").value = pet.image?.url || "";
+      document.getElementById("image-alt").value = pet.image?.alt || "";
+
+      const modal = new bootstrap.Modal(document.getElementById("editPetModal"));
+      modal.show();
     });
   }
 
