@@ -1,0 +1,6 @@
+/* /index.html 200
+/pet/create    /pet/create.html    200
+
+/auth/login    /auth/login.html    200
+/auth/register /auth/register.html 200
+/details       /details/index.html 200
