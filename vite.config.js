@@ -1,9 +1,9 @@
 import { defineConfig, resolveConfig } from 'vite';
 import path from 'path';
-resolveConfig
+
 
 export default defineConfig({
-  root: './',
+  root: '/',
   base: '/',
   build: {
     outDir: 'dist',
