@@ -1,82 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="View detailed information about your selected pet. Learn about their breed, age, gender, and more to find your perfect companion." />
+  <meta name="keywords" content="pet adoption, pet details, adopt pets, cat adoption, dog adoption, animal shelter, pet rescue, adoptable pets" />
+  <meta name="author" content="Pet Adoption Team" />
+  <meta property="og:title" content="Pet Details | Pet Adoption" />
+  <meta property="og:description" content="Discover detailed information about your selected pet. Learn about their breed, age, gender, and more to find your perfect companion." />
+  <meta property="og:image" content="https://yourwebsite.com/public/assets/animal-4085255_1280.jpg" />
+  <meta property="og:url" content="https://yourwebsite.com/details/index.html" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://yourwebsite.com/details/index.html" />
+  <link rel="icon" href="/public/assets/favicon.ico" type="image/x-icon" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <script defer type="module" src="/src/app.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <title>Pet Details</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>Pet Details | Pet Adoption</title>
 </head>
+
 <body>
-    <header>
-        <!-- Top Navigation (Tablet & Desktop) -->
-        <nav id="top-nav" class="d-none d-md-flex justify-content-center gap-4 py-3 border-bottom" aria-label="Top navigation">
-          <a href="/index.html" class="nav-link">Home</a>
-          <a href="/profile/index.html" class="nav-link">Profile</a>
-          <a href="/login/" class="nav-link">login</a>
-        </nav>
-      
-        <!-- Bottom Navigation (Mobile only) -->
-        <nav id="bottom-nav" class="d-flex d-md-none justify-content-around py-2 border-top fixed-bottom" aria-label="Bottom mobile navigation">
-          <a href="/index.html" class="nav-link text-center">
-              <i class="fas fa-home"></i><br /><small>Home</small>
-          </a>
-          <a href="/profile/" class="nav-link text-center">
-              <i class="fas fa-user"></i><br /><small>Profile</small>
-          </a>
-          <a href="/pet/create.html" class="nav-link text-center">
-              <i class="fas fa-plus"></i><br /><small>Create</small>
-          </a>
-          <a href="/login/" class="nav-link text-center">
-              <i class="fas fa-sign-in-alt"></i><br /><small>Login/Logout</small>
-          </a>
-      </nav>
-      
-  <main class="container my-5">
+  <header>
+    <!-- Top Navigation (Tablet & Desktop) -->
+    <nav id="top-nav" class="d-none d-md-flex justify-content-center gap-4 py-3 border-bottom" aria-label="Top navigation">
+      <a href="/index.html" class="nav-link" aria-label="Go to Home Page">Home</a>
+      <a href="/profile/index.html" class="nav-link" aria-label="Go to Profile Page">Profile</a>
+      <a href="/login/" class="nav-link" aria-label="Go to Login Page">Login</a>
+    </nav>
+
+    <!-- Bottom Navigation (Mobile only) -->
+    <nav id="bottom-nav" class="d-flex d-md-none justify-content-around py-2 border-top fixed-bottom" aria-label="Bottom mobile navigation">
+      <a href="/index.html" class="nav-link text-center" aria-label="Go to Home Page">
+        <i class="fas fa-home"></i><br /><small>Home</small>
+      </a>
+      <a href="/profile/" class="nav-link text-center" aria-label="Go to Profile Page">
+        <i class="fas fa-user"></i><br /><small>Profile</small>
+      </a>
+      <a href="/pet/create.html" class="nav-link text-center" aria-label="Go to Create Page">
+        <i class="fas fa-plus"></i><br /><small>Create</small>
+      </a>
+      <a href="/login/" class="nav-link text-center" aria-label="Go to Login or Logout Page">
+        <i class="fas fa-sign-in-alt"></i><br /><small>Login/Logout</small>
+      </a>
+    </nav>
+  </header>
+
+  <main class="container my-5" id="main-content">
     <div class="row justify-content-center">
       <div class="col-lg-8">
         <div id="petDetails" class="card shadow-lg border-0">
           <div class="row g-0">
             <div class="col-md-6">
-              <img
-                id="petImage"
-                src=""
-                alt="Pet Image"
-                class="img-fluid rounded-start w-100 h-100 object-fit-cover"
-              />
+              <img id="petImage" src="" alt="Image of the selected pet" class="img-fluid rounded-start w-100 h-100 object-fit-cover" loading="lazy" />
             </div>
             <div class="col-md-6">
               <div class="card-body">
-                <h2 id="petName" class="card-title fw-bold"></h2>
-                <p id="petBreed" class="text-muted mb-1"></p>
-                <p id="petDescription" class="mb-2"></p>
+                <h2 id="petName" class="card-title fw-bold">Pet Name</h2>
+                <p id="petBreed" class="text-muted mb-1">Breed</p>
+                <p id="petDescription" class="mb-2">Description</p>
 
                 <ul class="list-group list-group-flush mb-3">
                   <li class="list-group-item">
-                    <strong>Species:</strong> <span id="petSpecies"></span>
+                    <strong>Species:</strong> <span id="petSpecies">Species</span>
                   </li>
                   <li class="list-group-item">
-                    <strong>Age:</strong> <span id="petAge"></span>
+                    <strong>Age:</strong> <span id="petAge">Age</span>
                   </li>
                   <li class="list-group-item">
-                    <strong>Gender:</strong> <span id="petGender"></span>
+                    <strong>Gender:</strong> <span id="petGender">Gender</span>
                   </li>
                   <li class="list-group-item">
-                    <strong>Color:</strong> <span id="petColor"></span>
+                    <strong>Color:</strong> <span id="petColor">Color</span>
                   </li>
                   <li class="list-group-item">
-                    <strong>Size:</strong> <span id="petSize"></span>
+                    <strong>Size:</strong> <span id="petSize">Size</span>
                   </li>
                   <li class="list-group-item">
-                    <strong>Location:</strong> <span id="petLocation"></span>
+                    <strong>Location:</strong> <span id="petLocation">Location</span>
                   </li>
                   <li class="list-group-item">
-                    <strong>Status:</strong> <span id="petStatus" class="badge bg-success"></span>
+                    <strong>Status:</strong> <span id="petStatus" class="badge bg-success">Available</span>
                   </li>
                 </ul>
 
-                <button id="shareButton" class="btn btn-outline-secondary w-100">
+                <button id="shareButton" class="btn btn-outline-secondary w-100" aria-label="Share this pet">
                   <i class="fas fa-share"></i> Share Pet
                 </button>
               </div>
@@ -91,4 +99,5 @@
     <small>&copy; 2025 Pet Adoption. All rights reserved.</small>
   </footer>
 </body>
+
 </html>

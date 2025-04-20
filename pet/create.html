@@ -1,106 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer type="module" src="/src/app.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  
-    <title>create pet</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create a new pet listing for adoption. Provide details about the pet, including name, breed, age, and more." />
+  <meta name="keywords" content="create pet, pet adoption, add pet, adoptable pets, pet rescue, animal shelter" />
+  <meta name="author" content="Pet Adoption Team" />
+  <meta property="og:title" content="Create Pet | Pet Adoption" />
+  <meta property="og:description" content="Create a new pet listing for adoption. Provide details about the pet, including name, breed, age, and more." />
+  <meta property="og:image" content="https://yourwebsite.com/public/assets/create-pet.jpg" />
+  <meta property="og:url" content="https://yourwebsite.com/pet/create.html" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://yourwebsite.com/pet/create.html" />
+  <link rel="icon" href="/public/assets/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script defer type="module" src="/src/app.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Create Pet | Pet Adoption</title>
 </head>
+
 <body>
   <header>
     <!-- Top Navigation (Tablet & Desktop) -->
     <nav id="top-nav" class="d-none d-md-flex justify-content-center gap-4 py-3 border-bottom" aria-label="Top navigation">
-      <a href="/index.html" class="nav-link">Home</a>
-      <a href="/profile/index.html" class="nav-link">Profile</a>
-      <a href="/login/" class="nav-link">login</a>
+      <a href="/index.html" class="nav-link" aria-label="Go to Home Page">Home</a>
+      <a href="/profile/index.html" class="nav-link" aria-label="Go to Profile Page">Profile</a>
+      <a href="/login/" class="nav-link" aria-label="Go to Login Page">Login</a>
     </nav>
-  
+
     <!-- Bottom Navigation (Mobile only) -->
     <nav id="bottom-nav" class="d-flex d-md-none justify-content-around py-2 border-top fixed-bottom" aria-label="Bottom mobile navigation">
-      <a href="/index.html" class="nav-link text-center">
-          <i class="fas fa-home"></i><br /><small>Home</small>
+      <a href="/index.html" class="nav-link text-center" aria-label="Go to Home Page">
+        <i class="fas fa-home"></i><br /><small>Home</small>
       </a>
-      <a href="/profile/" class="nav-link text-center">
-          <i class="fas fa-user"></i><br /><small>Profile</small>
+      <a href="/profile/" class="nav-link text-center" aria-label="Go to Profile Page">
+        <i class="fas fa-user"></i><br /><small>Profile</small>
       </a>
-      <a href="/pet/create.html" class="nav-link text-center">
-          <i class="fas fa-plus"></i><br /><small>Create</small>
+      <a href="/pet/create.html" class="nav-link text-center" aria-label="Go to Create Page">
+        <i class="fas fa-plus"></i><br /><small>Create</small>
       </a>
-      <a href="#" id="logoutLink" class="nav-link text-center">
+      <a href="#" id="logoutLink" class="nav-link text-center" aria-label="Logout">
         <i class="fas fa-sign-out-alt"></i><br /><small>Logout</small>
-      </a>      
-  </nav>
+      </a>
+    </nav>
+  </header>
 
   <main class="container my-5">
     <h2 class="text-center mb-4">Create a Pet</h2>
 
-    <form id="CreatePet" name="CreatePet" class="row g-4">
+    <form id="CreatePet" name="CreatePet" class="row g-4 needs-validation" novalidate>
       <div class="col-md-6">
         <label for="pet-name" class="form-label">Pet Name</label>
-        <input type="text" id="pet-name" name="name" class="form-control" required />
+        <input type="text" id="pet-name" name="name" class="form-control" required aria-describedby="petNameHelp" />
+        <div id="petNameHelp" class="form-text">Enter the name of the pet.</div>
+        <div class="invalid-feedback">Please provide a valid pet name.</div>
       </div>
 
       <div class="col-md-6">
         <label for="pet-species" class="form-label">Species</label>
-        <input type="text" id="pet-species" name="species" class="form-control" required />
+        <input type="text" id="pet-species" name="species" class="form-control" required aria-describedby="petSpeciesHelp" />
+        <div id="petSpeciesHelp" class="form-text">Specify the species (e.g., Dog, Cat).</div>
+        <div class="invalid-feedback">Please provide a valid species.</div>
       </div>
 
       <div class="col-md-6">
         <label for="pet-breed" class="form-label">Breed</label>
-        <input type="text" id="pet-breed" name="breed" class="form-control" required />
+        <input type="text" id="pet-breed" name="breed" class="form-control" required aria-describedby="petBreedHelp" />
+        <div id="petBreedHelp" class="form-text">Enter the breed of the pet.</div>
+        <div class="invalid-feedback">Please provide a valid breed.</div>
       </div>
 
       <div class="col-md-6">
         <label for="pet-age" class="form-label">Age</label>
-        <input type="number" id="pet-age" name="age" class="form-control" required />
+        <input type="number" id="pet-age" name="age" class="form-control" required aria-describedby="petAgeHelp" />
+        <div id="petAgeHelp" class="form-text">Enter the age of the pet in years.</div>
+        <div class="invalid-feedback">Please provide a valid age.</div>
       </div>
 
       <div class="col-md-6">
         <label for="pet-gender" class="form-label">Gender</label>
-        <input type="text" id="pet-gender" name="gender" class="form-control" required />
+        <input type="text" id="pet-gender" name="gender" class="form-control" required aria-describedby="petGenderHelp" />
+        <div id="petGenderHelp" class="form-text">Specify the gender (e.g., Male, Female).</div>
+        <div class="invalid-feedback">Please provide a valid gender.</div>
       </div>
 
       <div class="col-md-6">
         <label for="pet-size" class="form-label">Size</label>
-        <input type="text" id="pet-size" name="size" class="form-control" required />
+        <input type="text" id="pet-size" name="size" class="form-control" required aria-describedby="petSizeHelp" />
+        <div id="petSizeHelp" class="form-text">Specify the size (e.g., Small, Medium, Large).</div>
+        <div class="invalid-feedback">Please provide a valid size.</div>
       </div>
 
       <div class="col-md-6">
         <label for="pet-color" class="form-label">Color</label>
-        <input type="text" id="pet-color" name="color" class="form-control" required />
+        <input type="text" id="pet-color" name="color" class="form-control" required aria-describedby="petColorHelp" />
+        <div id="petColorHelp" class="form-text">Enter the color of the pet.</div>
+        <div class="invalid-feedback">Please provide a valid color.</div>
       </div>
 
       <div class="col-md-6">
         <label for="pet-location" class="form-label">Location</label>
-        <input type="text" id="pet-location" name="location" class="form-control" required />
+        <input type="text" id="pet-location" name="location" class="form-control" required aria-describedby="petLocationHelp" />
+        <div id="petLocationHelp" class="form-text">Enter the location of the pet.</div>
+        <div class="invalid-feedback">Please provide a valid location.</div>
       </div>
 
       <div class="col-12">
         <label for="pet-description" class="form-label">Description</label>
-        <textarea id="pet-description" name="description" class="form-control" rows="4" required></textarea>
+        <textarea id="pet-description" name="description" class="form-control" rows="4" required aria-describedby="petDescriptionHelp"></textarea>
+        <div id="petDescriptionHelp" class="form-text">Provide a brief description of the pet.</div>
+        <div class="invalid-feedback">Please provide a valid description.</div>
       </div>
 
       <div class="col-md-6">
         <label for="pet-status" class="form-label">Adoption Status</label>
-        <input type="text" id="pet-status" name="adoptionStatus" class="form-control" value="Available" />
+        <input type="text" id="pet-status" name="adoptionStatus" class="form-control" value="Available" readonly />
       </div>
 
       <div class="col-md-6">
         <label for="image-url" class="form-label">Image URL</label>
-        <input type="url" id="image-url" name="image-url" class="form-control" required />
+        <input type="url" id="image-url" name="image-url" class="form-control" required aria-describedby="imageUrlHelp" />
+        <div id="imageUrlHelp" class="form-text">Provide the URL of the pet's image.</div>
+        <div class="invalid-feedback">Please provide a valid image URL.</div>
       </div>
 
       <div class="col-md-6">
         <label for="image-alt" class="form-label">Image Alt Text</label>
-        <input type="text" id="image-alt" name="image-alt" class="form-control" required />
+        <input type="text" id="image-alt" name="image-alt" class="form-control" required aria-describedby="imageAltHelp" />
+        <div id="imageAltHelp" class="form-text">Provide a description for the image (used for accessibility).</div>
+        <div class="invalid-feedback">Please provide valid alt text.</div>
       </div>
 
       <div class="col-md-6 text-center">
         <label class="form-label d-block">Preview</label>
-        <img id="previewImage" src="https://placehold.co/300x200" class="img-fluid rounded border" style="max-height: 200px;" />
+        <img id="previewImage" src="https://placehold.co/300x200" class="img-fluid rounded border" style="max-height: 200px;" alt="Preview of the pet image" />
       </div>
 
       <div class="col-12 text-end">
@@ -108,6 +142,10 @@
       </div>
     </form>
   </main>
-    
+
+  <footer class="text-center py-3 mt-5">
+    <small>&copy; 2025 Pet Adoption. All rights reserved.</small>
+  </footer>
 </body>
+
 </html>
