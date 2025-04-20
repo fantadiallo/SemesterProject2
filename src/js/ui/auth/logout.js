@@ -1,5 +1,4 @@
-import { remove } from "../../utils/storage/localStorage";
-
+import { remove } from "../../utils/storage/localstorage.js"; 
 
 export function onLogout() {
   const confirmed = confirm("Are you sure you want to sign out?");
@@ -12,7 +11,7 @@ export function onLogout() {
     remove("token");
     remove("user");
     alert("You have logged out!");
-    window.location.href = "/auth/login.html"; // ✅ make sure path is correct
+    window.location.href = "/auth/login.html"; 
   } catch (error) {
     console.error("Logout failed:", error);
     alert("Could not sign out. Please try again.");

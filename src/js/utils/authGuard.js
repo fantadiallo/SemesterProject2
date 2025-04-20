@@ -1,5 +1,5 @@
 import { ACCESS_TOKEN_KEY, ROUTES } from "./storage/Constans";
-import * as storage from "./storage/localStorage";
+import * as storage from "./storage/localstorage";
 
 /**
  * Checks if the user is authenticated and the session is still valid.

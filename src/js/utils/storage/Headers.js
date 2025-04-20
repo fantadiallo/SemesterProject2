@@ -1,5 +1,5 @@
 import { ACCESS_TOKEN_KEY, API_KEY } from './Constans.js';
-import * as storage from './localStorage.js';
+import * as storage from './localstorage.js';
 
 /**
  * Constructs the headers for authenticated API requests.

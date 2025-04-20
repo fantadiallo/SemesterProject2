@@ -1,5 +1,5 @@
 import PetsAPI from "../../api/petsApi/petsApi.js";
-import { load } from "../../utils/storage/localStorage.js";
+import { load } from "../../utils/storage/localstorage.js";
 
 const petsApi = new PetsAPI();
 const user = load("user");
